@@ -20,30 +20,30 @@ class _AddPersonScreenState extends State<AddPersonScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Firebase-CRUD',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 20, top: 30, right: 20),
+        margin: const EdgeInsets.only(left: 20, top: 30, right: 20),
         child: Column(
           children: [
             TextFormField(
               controller: nameController,
-              decoration: InputDecoration(hintText: "Name"),
+              decoration: const InputDecoration(hintText: "Name"),
             ),
-            Gap(10),
+            const Gap(10),
             TextFormField(
               controller: ageController,
-              decoration: InputDecoration(hintText: "Age"),
+              decoration: const InputDecoration(hintText: "Age"),
             ),
-            Gap(10),
+            const Gap(10),
             TextFormField(
               controller: placeController,
-              decoration: InputDecoration(hintText: "Place"),
+              decoration: const InputDecoration(hintText: "Place"),
             ),
-            Gap(20),
+            const Gap(20),
             Center(
                 child: ElevatedButton(
                     onPressed: () async {
@@ -67,7 +67,7 @@ class _AddPersonScreenState extends State<AddPersonScreen> {
                             fontSize: 16.0);
                       });
                     },
-                    child: Text(
+                    child: const Text(
                       'Submit',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

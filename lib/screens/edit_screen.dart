@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_setup/services/db_services.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -35,24 +37,24 @@ class _EditScreenState extends State<EditScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(left: 20, top: 30, right: 20),
+        margin: const EdgeInsets.only(left: 20, top: 30, right: 20),
         child: Column(
           children: [
             TextFormField(
               controller: nameController,
-              decoration: InputDecoration(hintText: "Name"),
+              decoration: const InputDecoration(hintText: "Name"),
             ),
-            Gap(10),
+            const Gap(10),
             TextFormField(
               controller: ageController,
-              decoration: InputDecoration(hintText: "Age"),
+              decoration: const InputDecoration(hintText: "Age"),
             ),
-            Gap(10),
+            const Gap(10),
             TextFormField(
               controller: placeController,
-              decoration: InputDecoration(hintText: "Place"),
+              decoration: const InputDecoration(hintText: "Place"),
             ),
-            Gap(20),
+            const Gap(20),
             Center(
                 child: ElevatedButton(
                     onPressed: () async {
@@ -66,7 +68,7 @@ class _EditScreenState extends State<EditScreen> {
                           .updatePerson(widget.id, updateInfo);
                       Navigator.pop(context);
                     },
-                    child: Text(
+                    child: const Text(
                       'Update',
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   DocumentSnapshot ds = snapshot.data.docs[index];
                   return Container(
-                    margin: EdgeInsets.only(bottom: 20),
+                    margin: const EdgeInsets.only(bottom: 20),
                     child: Material(
                       color: Colors.white.withOpacity(0.5),
                       elevation: 5,
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Gap(10),
+                              const Gap(10),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Text(
                                     "Name : ${ds["Name"]}",
                                     style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                        const TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                   IconButton(
                                       onPressed: () {
@@ -75,31 +75,31 @@ class _HomeScreenState extends State<HomeScreen> {
                                                       place: ds["Place"],
                                                     )));
                                       },
-                                      icon: Icon(Icons.edit))
+                                      icon: const Icon(Icons.edit))
                                 ],
                               ),
                               Text("Age : ${ds["Age"]}",
                                   style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
+                                      const TextStyle(fontWeight: FontWeight.bold)),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text("Place : ${ds["Place"]}",
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.bold)),
                                   IconButton(
                                       onPressed: () async {
                                         await DataBaseServices()
                                             .deletePereson(ds["id"]);
                                       },
-                                      icon: Icon(
+                                      icon: const Icon(
                                         Icons.delete,
                                         color: Colors.red,
                                       ))
                                 ],
                               ),
-                              Gap(10)
+                              const Gap(10)
                             ],
                           ),
                         ),
@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddPersonScreen(),
+                  builder: (context) => const AddPersonScreen(),
                 ));
           },
           child: const Icon(Icons.add)),
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fit: BoxFit.fitHeight,
               'assets/bookbg.jpg'),
           Container(
-            margin: EdgeInsets.only(left: 20, right: 20, top: 30),
+            margin: const EdgeInsets.only(left: 20, right: 20, top: 30),
             child: Column(
               children: [Expanded(child: allPersonInfos())],
             ),
